@@ -24,8 +24,7 @@ export default class Hashtable {
     const keyCharacters = Array.from(key);
     const hash = keyCharacters.reduce(
       (hashAccumulator, keyChar, index, keyCharacters) =>
-        hashAccumulator +
-        keyChar.charCodeAt(0) * (PRIME ** keyCharacters.length - index - 1),
+        (hashAccumulator + keyChar.charCodeAt(0) * (PRIME ** keyCharacters.length - index - 1) % 101),
       0
     );
     return hash % this.buckets.length;
@@ -104,5 +103,9 @@ export default class Hashtable {
       const bucketValues = bucket.toArray().map((data) => data.value);
       return values.concat(bucketValues);
     }, []);
+  }
+
+  toString() {
+    return this.buckets[0].toArray();
   }
 }
