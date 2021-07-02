@@ -5,7 +5,7 @@ const PRIME = 31;
 
 export default class Hashtable {
   /**
-   * @param {number} hashTableSize
+   * @param {number} hashTableSize - размер хеш-таблицы
    */
   constructor(hashTableSize = defaultHashTableSize) {
     this.buckets = Array(hashTableSize)

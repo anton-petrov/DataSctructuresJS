@@ -1,14 +1,9 @@
-import Hashtable from './Hashtable';
+const CryptoJS = require("crypto-js");
 
-const hashTable = new Hashtable();
+var md5_hash = CryptoJS.MD5("asdfasdfasdfasd1");
+var sha512_hash = CryptoJS.SHA512("asdfasdfasdfasd1");
 
-hashTable.hash("300"); // ?
+console.log(md5_hash.toString());
+console.log(parseInt(md5_hash.toString(), 16));
 
-hashTable.set("user", "Anton");
-hashTable.set("user1", "Paramon");
-hashTable.delete("nn");
-hashTable.get("user1"); // ?
-hashTable.getValues(); // ?
-hashTable.has("user") //?
-
-hashTable; //?
+//console.log(sha512_hash.toString());
